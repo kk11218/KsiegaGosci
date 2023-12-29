@@ -1,18 +1,27 @@
-// server/user.js
+const bcrypt = require('bcryptjs');
 const db = require('./db');
 
 const User = {
   register: (userData, callback) => {
-    db.query(
-      'INSERT INTO users (name, last_name, passwords, email, role) VALUES (?, ?, ?, ?, ?)',
-      [userData.name, userData.last_name, userData.passwords, userData.email, '0'],
-      (err, result) => {
-        if (err) {
-          return callback(err, null);
-        }
-        return callback(null, result);
+    // Szyfrowanie hasła przed zapisaniem do bazy danych
+    const saltRounds = 10;
+
+    bcrypt.hash(userData.passwords, saltRounds, (err, hashedPassword) => {
+      if (err) {
+        return callback(err, null);
       }
-    );
+
+      db.query(
+        'INSERT INTO users (name, last_name, passwords, email, role) VALUES (?, ?, ?, ?, ?)',
+        [userData.name, userData.last_name, hashedPassword, userData.email, '0'],
+        (dbErr, result) => {
+          if (dbErr) {
+            return callback(dbErr, null);
+          }
+          return callback(null, result);
+        }
+      );
+    });
   },
 };
 
