@@ -1,6 +1,6 @@
 // client/src/components/RegisterForm.js
 import React, { useState } from 'react';
-import api from '../services/api';
+import api from '../../../services/api';
 
 const RegisterForm = () => {
     const [userData, setUserData] = useState({
@@ -23,12 +23,12 @@ const RegisterForm = () => {
             console.log(response.data.message);
 
             // Ustaw komunikat o sukcesie rejestracji
-            setRegistrationMessage('Registration successful!');
+            setRegistrationMessage('Zarejestrowałeś się!');
         } catch (error) {
-            console.error('Registration failed', error);
+            console.error('Rejestracja nie powiodła się', error);
 
             // Ustaw komunikat o błędzie rejestracji
-            setRegistrationMessage('Registration failed. Please try again.');
+            setRegistrationMessage('Rejestracja nie powiodła się. Spróbuj ponownie');
         }
     };
 

@@ -23,6 +23,11 @@ const User = {
       );
     });
   },
+
+  // Dodaj inne funkcje związane z użytkownikami, np. funkcję do logowania
+  login: (email, passwords, callback) => {
+    // Implementacja funkcji logowania
+  },
 };
 
 module.exports = User;
