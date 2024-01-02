@@ -1,9 +1,6 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Link, Switch, Redirect } from 'react-router-dom';
-import RegisterForm from './components/Auth/Registration/RegisterForm';
-import LoginForm from './components/Auth/Login/LoginForm';
-import UserDashboard from './components/Dashboard/UserDashboard';
-import AdminDashboard from './components/Dashboard/AdminDashboard';
+import OrderPage from './components/OrderPage'; // Import the OrderPage component
 
 function App() {
   const [loggedInUser, setLoggedInUser] = useState(null);
@@ -15,6 +12,9 @@ function App() {
       </h2>
       <h2>
         <Link to="/login">Login Form</Link>
+      </h2>
+      <h2>
+        <Link to="/order">Order Page</Link> {/* Add link to the Order Page */}
       </h2>
     </>
   );
@@ -37,6 +37,7 @@ function App() {
             render={() => (loggedInUser ? <UserDashboard loggedInUser={loggedInUser} /> : <Redirect to="/" />)}
           />
           <Route path="/admin-home" component={AdminDashboard} />
+          <Route path="/order" component={OrderPage} /> {/* Add the route for the OrderPage */}
         </Switch>
       </div>
     </Router>
