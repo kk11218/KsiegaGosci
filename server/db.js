@@ -1,4 +1,4 @@
-// db.js
+
 
 const mysql = require('mysql');
 

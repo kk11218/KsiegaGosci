@@ -3,7 +3,6 @@ const db = require('./db');
 
 const User = {
   register: (userData, callback) => {
-    // Szyfrowanie hasła przed zapisaniem do bazy danych
     const saltRounds = 10;
 
     bcrypt.hash(userData.passwords, saltRounds, (err, hashedPassword) => {
@@ -24,9 +23,30 @@ const User = {
     });
   },
 
-  // Dodaj inne funkcje związane z użytkownikami, np. funkcję do logowania
   login: (email, passwords, callback) => {
-    // Implementacja funkcji logowania
+    db.query('SELECT * FROM users WHERE email = ?', [email], (err, results) => {
+      if (err) {
+        return callback(err, null);
+      }
+
+      if (results.length === 0) {
+        return callback(null, null);
+      }
+
+      const user = results[0];
+
+      bcrypt.compare(passwords, user.passwords, (compareErr, isMatch) => {
+        if (compareErr) {
+          return callback(compareErr, null);
+        }
+
+        if (!isMatch) {
+          return callback(null, null);
+        }
+
+        return callback(null, user);
+      });
+    });
   },
 };
 

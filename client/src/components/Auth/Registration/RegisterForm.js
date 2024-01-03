@@ -1,4 +1,3 @@
-// client/src/components/RegisterForm.js
 import React, { useState } from 'react';
 import api from '../../../services/api';
 

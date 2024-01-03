@@ -2,7 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const db = require('./db');
-const authRoutes = require('./auth'); // Zmienione z 'auth' na 'auth.js'
+const authRoutes = require('./auth'); 
 
 const app = express();
 const PORT = process.env.PORT || 3001;

@@ -1,14 +1,17 @@
-// client/src/components/Auth/Login/LoginForm.js
 import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import api from '../../../services/api';
+import UserDashboard from '../../Dashboard/UserDashboard';
+import AdminDashboard from '../../Dashboard/AdminDashboard';
 
-const LoginForm = () => {
+const LoginForm = ({ loggedInUser, setLoggedInUser }) => {
   const [loginData, setLoginData] = useState({
     email: '',
     passwords: '',
   });
 
   const [loginMessage, setLoginMessage] = useState('');
+  const history = useHistory();
 
   const handleInputChange = (e) => {
     setLoginData({ ...loginData, [e.target.name]: e.target.value });
@@ -20,28 +23,40 @@ const LoginForm = () => {
       const response = await api.post('/auth/login', loginData);
       console.log(response.data.message);
 
-      // Ustaw komunikat o sukcesie logowania
       setLoginMessage('Login successful!');
+      setLoggedInUser(response.data.user);
+
+      // Przekieruj do odpowiedniej ścieżki po zalogowaniu
+      if (response.data.user.role === '0') {
+        history.push('/user-home');
+      } else if (response.data.user.role === '1') {
+        history.push('/admin-home');
+      }
     } catch (error) {
       console.error('Login failed', error);
-
-      // Ustaw komunikat o błędzie logowania
       setLoginMessage('Login failed. Please try again.');
     }
   };
 
   return (
     <div>
-      <form onSubmit={handleLogin}>
-        <label>Email:</label>
-        <input type="email" name="email" onChange={handleInputChange} required />
-        <label>Password:</label>
-        <input type="password" name="passwords" onChange={handleInputChange} required />
-        <button type="submit">Login</button>
-      </form>
+      {loggedInUser ? (
+        loggedInUser.role === '0' ? (
+          <UserDashboard />
+        ) : (
+          <AdminDashboard />
+        )
+      ) : (
+        <form onSubmit={handleLogin}>
+          <label>Email:</label>
+          <input type="email" name="email" onChange={handleInputChange} required />
+          <label>Password:</label>
+          <input type="password" name="passwords" onChange={handleInputChange} required />
+          <button type="submit">Login</button>
 
-      {/* Wyświetl komunikat o logowaniu, jeśli istnieje */}
-      {loginMessage && <div style={{ marginTop: '10px', color: 'green' }}>{loginMessage}</div>}
+          {loginMessage && <div style={{ marginTop: '10px', color: 'green' }}>{loginMessage}</div>}
+        </form>
+      )}
     </div>
   );
 };
