@@ -1,0 +1,47 @@
+.reszta {
+    display: flex;
+    overflow: hidden; 
+}
+.dane {
+    width: 76%;
+}
+.summary-panel {
+    flex-grow: 1;
+    width: 331px;
+}
+.menubars {
+    
+    background: #ffffff;
+    border-radius: 6px;
+    border-style: solid;
+    border-color: var(--slate-300, #cbd5e1);
+    border-width: 1px;
+    padding: 4px 5px 4px 5px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    align-self: stretch;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    
+}
+
+.menubar-item {
+    background: var(--white, #ffffff);
+    border-radius: 4px;
+    padding: 6px 12px 6px 12px;
+    display: flex;
+    flex-direction: row;
+    gap: 0px;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+.active-menubar-item {
+    background: #f1f5f9;
+    box-sizing: border-box;
+    width: 100%;
+}

@@ -1,0 +1,49 @@
+.setting-menubar {
+    background: #ffffff;
+    border-radius: 6px;
+    border-style: solid;
+    border-color: var(--slate-300, #cbd5e1);
+    border-width: 1px;
+    padding: 4px 5px 4px 5px;
+    display: flex;
+    flex-direction: row;
+    gap: 0px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-shrink: 0;
+    position: relative;
+    width: 300px;
+}
+.setting-menubar-item1 {
+    background: var(--slate-100, #f1f5f9);
+    border-radius: 4px;
+    padding: 6px 12px 6px 12px;
+    display: flex;
+    flex-direction: row;
+    gap: 0px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-shrink: 0;
+    position: relative;
+}
+.setting-menubar-item {
+    background: #ffffff;
+    border-radius: 4px;
+    padding: 6px 12px 6px 12px;
+    display: flex;
+    flex-direction: row;
+    gap: 0px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-shrink: 0;
+    position: relative;
+}
+.setting-file {
+    color: #000000;
+    text-align: left;
+    font-family: var(--subtle-medium-font-family, 'Inter-Medium', sans-serif);
+    font-size: var(--subtle-medium-font-size, 14px);
+    line-height: var(--subtle-medium-line-height, 20px);
+    font-weight: var(--subtle-medium-font-weight, 500);
+    position: relative;
+}

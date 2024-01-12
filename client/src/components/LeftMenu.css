@@ -1,0 +1,84 @@
+/* LeftMenu.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+.left-menu-container {
+  height: calc(100vh - 80px);
+  display: flex;
+  width: 256px;
+ padding: 40px 10px;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  background: #FFF;
+  box-shadow: 2px 0px 5px 0px rgba(0, 0, 0, 0.05);
+  
+}
+  
+.logo-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 6.503px;
+}
+
+.left-menu-menu {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+  
+.top-menu-items-container {
+  flex: 1;
+  margin-top: 50px;
+  height: 140px;
+  }
+ 
+ 
+  
+  .left-menu-menu-item {
+    align-self: stretch;
+    padding: 10px 8px 10px 32px;
+    background: white;
+    border-radius: 6px;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 8px;
+    display: flex;
+    text-decoration: none;
+    margin: 8px;
+    cursor: pointer;
+  }
+
+  .active-link {
+    background-color: #F1F5F9; 
+  }
+  
+  
+  .left-menu-menu-icon {
+    width: 16px;
+    height: 16px;
+    position: relative;
+  }
+  
+  
+  .menu-icon-bar {
+    flex: 1 1 0;
+    align-self: stretch;
+    background: #334155;
+  }
+  
+  .left-menu-menu-text {
+    flex: 1 1 0;
+    color: #334155;
+    font-family: 'Inter';
+font-size: 14px;
+font-style: normal;
+font-weight: 500;
+line-height: 20px;
+  }
+  
+  
+  

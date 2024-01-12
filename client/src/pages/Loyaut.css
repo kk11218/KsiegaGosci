@@ -1,0 +1,22 @@
+/* Loyaut.css */
+body,
+html {
+  height: 100%;
+  margin: 0;
+}
+
+.layout-container {
+  display: flex;
+}
+.layout-left-menu {
+  position:fixed;
+ 
+  
+}
+
+.layout-main {
+  padding: 50px 10px 10px 10px;
+  margin-left: 276px;
+  width: 100%;
+}
+

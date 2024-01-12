@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+.guestbook-container {
+    display: flex;
+    width: 516px;
+    padding: 24px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    border-radius: 6px;
+    border: 1px solid #E2E8F0;
+    background: #FFF;
+    box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.09);
+    font-family: 'Inter', sans-serif;
+}
+
+.guestbook-content {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    align-self: stretch;
+}
+
+.guestbook-image-container {
+    width: 192px;
+    height: 270px;
+    flex-shrink: 0;
+    border-radius: 5px;
+}
+
+.guestbook-content-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex: 1 0 0;
+    align-self: stretch;
+}
+
+.dane-produktu {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    align-self: stretch;
+}
+
+.guestbook-title-container {
+    display: flex;
+    padding: 0px 12px 10px 12px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    align-self: stretch;
+    border-bottom: 1px solid #E2E8F0;
+}
+.guestbook-title {
+    color: #000;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 28px; 
+    letter-spacing: -0.1px;  
+}
+.guestbook-subtitle {
+    width: 227px;
+    color: var(--slate-500, #64748B);
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; 
+}
+
+.guestbook-info-item{
+    display: flex;
+    padding: 0px 12px 6px 12px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    align-self: stretch;
+    background: #FFF;
+}
+.guestbook-label {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+}
+
+.guestbook-value {
+    color: var(--slate-500, #64748B);
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; 
+}
+.guestbook-button-container {
+    display: flex;
+    padding: 8px 16px;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    border-radius: 6px;
+    background: var(--slate-700, #334155);
+    text-decoration: none;
+}
+.guestbook-button-text {
+    color: #FFF;
+    font-family: 'Inter';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+}

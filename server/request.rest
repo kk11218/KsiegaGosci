@@ -1,0 +1,77 @@
+POST http://localhost:5000/users
+Content-Type: application/json
+
+{
+    "name": "Karol Rembiasz",
+    "email": "admin@wp.pl",
+    "password": "123456",
+    "confPassword": "123456",
+    "role": "admin"
+}
+###
+POST http://localhost:5000/login
+Content-Type: application/json
+
+{
+    "email": "admin@wp.pl",
+    "password": "123456"
+}
+
+###
+POST http://localhost:5000/login
+Content-Type: application/json
+
+{
+    "email": "user@wp.pl",
+    "password": "123456"
+}
+
+###
+GET http://localhost:5000/products/139cbdd2-a88e-4016-acaf-d5ab9e013473
+
+###
+GET http://localhost:5000/products/
+
+###
+PATCH http://localhost:5000/products/89aa283e-6f20-42df-8d0d-3657377ae258
+Content-Type: application/json
+
+{
+    "kod_qr": "Wzdghb",
+    "book_activity": 2,
+    "pin":"1111"
+}
+
+###
+GET http://localhost:5000/me
+###
+DELETE http://localhost:5000/logout
+
+
+### CREATE PRODUCT
+
+POST http://localhost:5000/products
+Content-Type: application/json
+
+{
+  "paymentData": {
+    "address": "Nowatorska 16",
+    "sum_product": 1321,
+    "company_name": "Bla Bla sdaf",
+    "nip": "12343212344",
+    "payment_type": "Karta"
+  },
+
+  "persons": {
+    "last_name_bride": "Nowicka",
+    "bride_name": "Krystyna",
+    "last_name_groom": "Cyganowski",
+    "groom_name": "Olgierd",
+    "wedding_date": "2026-05-12"
+  },
+  "template": 1,
+  "kod_qr": "srthaeffesdfvzxzxgfa",
+  "qr_personal_page": "getgsrtvsffv",
+  "pin": 2234,
+  "book_activity": "2"
+}

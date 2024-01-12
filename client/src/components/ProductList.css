@@ -1,0 +1,85 @@
+.Content {
+  width: calc(100 + 276px);
+}
+.Title {
+  color: var(--slate-900, #0f172a);
+text-align: left;
+font-family: var(--h-2-font-family, 'Inter-SemiBold', sans-serif);
+font-size: var(--h-2-font-size, 30px);
+line-height: var(--h-2-line-height, 36px);
+font-weight: var(--h-2-font-weight, 600);
+position: relative;
+width: 350px;
+margin-top: 20px;
+margin-bottom: 10px;;
+}
+.ProductList-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px; 
+}
+.GuestBook {
+  margin: 10px; 
+}
+.calosc {
+  border-radius: 8px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  margin-bottom: 10px;
+  width: 100%;
+  }
+
+.input-container {
+  width: 40%;
+  display: flex;
+  position: relative;
+  display: inline-block;
+}
+.icon-search {
+  opacity: 0.5;
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  top: 50%;
+  left: 10px; 
+  transform: translateY(-50%);
+  overflow: hidden;
+  }
+  .search-input {
+    width: calc(100% - 52px);
+    height: 40px;
+   
+    padding-left: 40px;
+    padding-right: 12px;
+    border-radius: 6px;
+    border: 1px #CBD5E1 solid;
+    font-size:medium;
+}
+.search-input:focus {
+  border-color: #223959; 
+  outline: none;
+}
+.button1 {
+  background: var(--slate-700, #334155);
+  border-radius: 6px;
+  padding: 8px 16px 8px 16px;
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  cursor: pointer;
+  }
+.login-with-email {
+  color: #ffffff;
+  text-align: left;
+  font-family: var(--body-medium-font-family, 'Inter-Medium', sans-serif);
+  font-size: var(--body-medium-font-size, 14px);
+  line-height: var(--body-medium-line-height, 24px);
+  font-weight: var(--body-medium-font-weight, 500);
+  position: relative;
+  }
+
